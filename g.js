@@ -18,6 +18,9 @@ acl.addEventListener('reading', () => {
   console.log("Acceleration along the X-axis " + acl.x);
   console.log("Acceleration along the Y-axis " + acl.y);
   console.log("Acceleration along the Z-axis " + acl.z);
+  document.getElementById('#ax').innerHTML = gyroscope.x
+  document.getElementById('#ay').innerHTML = gyroscope.y
+  document.getElementById('#az').innerHTML = gyroscope.z
 });
 
 acl.start();
