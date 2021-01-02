@@ -11,7 +11,7 @@ gyroscope.addEventListener('reading', e => {
   document.getElementById('y').innerHTML = gyroscope.y
   document.getElementById('z').innerHTML = gyroscope.z
 });
-gyroscope.onerror = event => document.getElementById('gerror').innerHTML = event.error.name, event.error.message;
+gyroscope.onerror = event => document.getElementById('gerror').innerHTML = event.error.message;
 gyroscope.start();
 
 let acl = new Accelerometer({frequency: 60});
@@ -26,6 +26,6 @@ acl.addEventListener('reading', () => {
   document.getElementById('az').innerHTML = acl.z
 });
 
-acl.onerror = event => document.getElementById('aerror').innerHTML = event.error.name, event.error.message;
+acl.onerror = event => document.getElementById('aerror').innerHTML = event.error.message;
 
 acl.start();
