@@ -1,4 +1,4 @@
-let gyroscope = new Gyroscope({frequency: 60});
+let gyroscope = new Gyroscope({frequency: 10});
 
 console.log('hello')
 
@@ -14,7 +14,7 @@ gyroscope.addEventListener('reading', e => {
 gyroscope.onerror = event => document.getElementById('gerror').innerHTML = event.error.message;
 gyroscope.start();
 
-let acl = new Accelerometer({frequency: 60});
+let acl = new Accelerometer({frequency: 10});
 
 acl.addEventListener('reading', () => {
   document.getElementById('a').innerHTML = 'A - working';
