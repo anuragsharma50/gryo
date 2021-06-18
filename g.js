@@ -1,13 +1,27 @@
 let gyroscope = new Gyroscope({frequency: 1})
 
 gyroscope.addEventListener('reading', e => {
-  document.getElementById('g').innerHTML = 'G - working updated2';
+  document.getElementById('g').innerHTML = 'G - working updated3';
   console.log("Angular velocity along the X-axis " + gyroscope.x);
   console.log("Angular velocity along the Y-axis " + gyroscope.y);
   console.log("Angular velocity along the Z-axis " + gyroscope.z);
   document.getElementById('x').innerHTML = gyroscope.x
   document.getElementById('y').innerHTML = gyroscope.y
   document.getElementById('z').innerHTML = gyroscope.z
+  
+  var totalx = 0;
+  totalx = totalx + gyroscope.x;
+  var totaly = 0;
+  totaly = totaly + gyroscope.y;
+  var totalz = 0;
+  totalz = totalz + gyroscope.z;
+  console.log("Avg velocity along the X-axis " + totalx);
+  console.log("Avg velocity along the Y-axis " + totaly);
+  console.log("Avg velocity along the Z-axis " + totalz);
+  document.getElementById('avgx').innerHTML = totalx
+  document.getElementById('avgy').innerHTML = totaly
+  document.getElementById('avgz').innerHTML = totalz
+  
 });
 gyroscope.onerror = event => document.getElementById('gerror').innerHTML = event.error.message;
 gyroscope.start();
