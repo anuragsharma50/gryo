@@ -1,5 +1,8 @@
 let gyroscope = new Gyroscope({frequency: 1})
 
+var totalx = 0;
+var totaly = 0;
+var totalz = 0;
 gyroscope.addEventListener('reading', e => {
   document.getElementById('g').innerHTML = 'G - working updated3';
   console.log("Angular velocity along the X-axis " + gyroscope.x);
@@ -8,12 +11,9 @@ gyroscope.addEventListener('reading', e => {
   document.getElementById('x').innerHTML = gyroscope.x
   document.getElementById('y').innerHTML = gyroscope.y
   document.getElementById('z').innerHTML = gyroscope.z
-  
-  var totalx = 0;
+   
   totalx = totalx + gyroscope.x;
-  var totaly = 0;
   totaly = totaly + gyroscope.y;
-  var totalz = 0;
   totalz = totalz + gyroscope.z;
   console.log("Avg velocity along the X-axis " + totalx);
   console.log("Avg velocity along the Y-axis " + totaly);
